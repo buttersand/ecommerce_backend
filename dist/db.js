@@ -13,10 +13,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.connectDB = void 0;
+/**
+ * Connects to MongoDB using the provided URI.
+ *
+ * WHY?
+ * - Allows microservices to connect to their respective MongoDB databases.
+ * - Centralizes database connection logic in `ecommerce-common`.
+ *
+ * WHAT IF WE DIDN’T USE THIS?
+ * - Each service would need to manually implement its own MongoDB connection logic.
+ * - More duplication and harder to maintain.
+ */
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDB = (mongoUri) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        yield mongoose_1.default.connect(mongoUri);
+        yield mongoose_1.default.connect(mongoUri, {
+            useNewUrlParser: true, // Helps avoid deprecation warnings
+            useUnifiedTopology: true, // Ensures stable connections
+        });
         console.log("MongoDB Connected");
     }
     catch (error) {
