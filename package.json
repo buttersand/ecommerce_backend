@@ -1,0 +1,38 @@
+{
+  "name": "@yashsingh2903/ecommerce-common",
+  "version": "2.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "format-all": "npm run lint:fix && npm run format"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@yashsingh2903/ecommerce-common": "^1.0.6",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
+    "mongoose": "^8.13.1",
+    "tsconfig-paths": "^4.2.0",
+    "winston": "^3.17.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^22.14.0",
+    "tsc-alias": "^1.8.15",
+    "typescript": "^5.8.2"
+  }
+}
